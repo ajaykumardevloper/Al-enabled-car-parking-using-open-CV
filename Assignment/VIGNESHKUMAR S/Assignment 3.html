@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>276367</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<section id="1-data-augmentation" class="cell markdown">
+<h1>1. Data Augmentation</h1>
+</section>
+<div class="cell code" data-execution_count="52">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import necessary lib.</span></span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="13">
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.preprocessing.image <span class="im">import</span> ImageDataGenerator</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="51">
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data augmentation on training variable</span></span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="14">
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>train_datagen <span class="op">=</span> ImageDataGenerator(rescale<span class="op">=</span><span class="fl">1.</span><span class="op">/</span><span class="dv">255</span>,</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a> zoom_range<span class="op">=</span><span class="fl">0.2</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a> horizontal_flip<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="53">
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data augmentation on testing variable</span></span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="15">
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>test_datagen <span class="op">=</span> ImageDataGenerator(rescale<span class="op">=</span><span class="fl">1.</span><span class="op">/</span><span class="dv">255</span>)</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="54">
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data augmentation on training data</span></span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="23">
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>xtrain <span class="op">=</span> train_datagen.flow_from_directory(<span class="st">&#39;./Animal_Dataset/dataset/Training&#39;</span>,</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a> target_size<span class="op">=</span>(<span class="dv">64</span>,<span class="dv">64</span>),</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a> class_mode<span class="op">=</span><span class="st">&#39;categorical&#39;</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a> batch_size<span class="op">=</span><span class="dv">100</span>)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Found 1238 images belonging to 4 classes.
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="55">
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data augmentation on testing data</span></span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="24">
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>xtest <span class="op">=</span> test_datagen.flow_from_directory(<span class="st">&#39;./Animal_Dataset/dataset/Testing&#39;</span>,</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a> target_size<span class="op">=</span>(<span class="dv">64</span>,<span class="dv">64</span>),</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a> class_mode<span class="op">=</span><span class="st">&#39;categorical&#39;</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a> batch_size<span class="op">=</span><span class="dv">100</span>)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Found 326 images belonging to 4 classes.
+</code></pre>
+</div>
+</div>
+<section id="2cnn-model-training" class="cell markdown">
+<h1>2.CNN model training</h1>
+</section>
+<div class="cell code" data-execution_count="56">
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importing req. lib.</span></span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="26">
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.models <span class="im">import</span> Sequential</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.layers <span class="im">import</span> Convolution2D, MaxPooling2D, Flatten, Dense</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="57">
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build a CNN block</span></span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="27">
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> Sequential() <span class="co"># Initializing sequential model</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>model.add(Convolution2D(<span class="dv">32</span>,(<span class="dv">3</span>,<span class="dv">3</span>),activation<span class="op">=</span><span class="st">&#39;relu&#39;</span>,input_shape<span class="op">=</span>(<span class="dv">64</span>,<span class="dv">64</span>,<span class="dv">3</span>))) <span class="co"># convolution layer</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>model.add(MaxPooling2D(pool_size<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">2</span>))) <span class="co"># Max pooling layer</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>model.add(Flatten()) <span class="co"># Flatten layer</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>model.add(Dense(<span class="dv">300</span>,activation<span class="op">=</span><span class="st">&#39;relu&#39;</span>)) <span class="co"># Hidden layer 1</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>model.add(Dense(<span class="dv">150</span>,activation<span class="op">=</span><span class="st">&#39;relu&#39;</span>)) <span class="co"># Hidden layer 2</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>model.add(Dense(<span class="dv">4</span>,activation<span class="op">=</span><span class="st">&#39;softmax&#39;</span>)) <span class="co"># Output layer</span></span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="50">
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compiling the model</span></span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="28">
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>model.<span class="bu">compile</span>(optimizer<span class="op">=</span><span class="st">&#39;adam&#39;</span>,loss<span class="op">=</span><span class="st">&#39;categorical_crossentropy&#39;</span>,metrics<span class="op">=</span>[<span class="st">&#39;accuracy&#39;</span>])</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(xtrain)</span></code></pre></div>
+<div class="output execute_result" data-execution_count="28">
+<pre><code>13</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="49">
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Train model</span></span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="29">
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>model.fit_generator(xtrain,</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a> steps_per_epoch<span class="op">=</span><span class="bu">len</span>(xtrain),</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a> epochs<span class="op">=</span><span class="dv">25</span>,</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a> validation_data<span class="op">=</span>xtest,</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a> validation_steps<span class="op">=</span><span class="bu">len</span>(xtest))</span></code></pre></div>
+<div class="output stream stderr">
+<pre><code>C:\Users\Arjun\AppData\Local\Temp\ipykernel_10028\3802424551.py:1: UserWarning: `Model.fit_generator` is deprecated and will be removed in a future version. Please use `Model.fit`, which supports generators.
+  model.fit_generator(xtrain,
+</code></pre>
+</div>
+<div class="output stream stdout">
+<pre><code>Epoch 1/25
+13/13 [==============================] - 46s 3s/step - loss: 1.7762 - accuracy: 0.2666 - val_loss: 1.2531 - val_accuracy: 0.3497
+Epoch 2/25
+13/13 [==============================] - 70s 6s/step - loss: 1.2015 - accuracy: 0.4443 - val_loss: 1.0715 - val_accuracy: 0.6319
+Epoch 3/25
+13/13 [==============================] - 72s 6s/step - loss: 1.0355 - accuracy: 0.5767 - val_loss: 1.0134 - val_accuracy: 0.6227
+Epoch 4/25
+13/13 [==============================] - 57s 4s/step - loss: 0.8678 - accuracy: 0.6648 - val_loss: 0.7236 - val_accuracy: 0.7423
+Epoch 5/25
+13/13 [==============================] - 56s 4s/step - loss: 0.7786 - accuracy: 0.6826 - val_loss: 0.6909 - val_accuracy: 0.7301
+Epoch 6/25
+13/13 [==============================] - 50s 4s/step - loss: 0.6868 - accuracy: 0.7464 - val_loss: 0.5578 - val_accuracy: 0.8037
+Epoch 7/25
+13/13 [==============================] - 59s 5s/step - loss: 0.6103 - accuracy: 0.7787 - val_loss: 0.4966 - val_accuracy: 0.8098
+Epoch 8/25
+13/13 [==============================] - 72s 6s/step - loss: 0.6940 - accuracy: 0.7302 - val_loss: 0.5413 - val_accuracy: 0.8190
+Epoch 9/25
+13/13 [==============================] - 59s 5s/step - loss: 0.6058 - accuracy: 0.7754 - val_loss: 0.4215 - val_accuracy: 0.8497
+Epoch 10/25
+13/13 [==============================] - 63s 5s/step - loss: 0.5429 - accuracy: 0.7908 - val_loss: 0.5823 - val_accuracy: 0.7699
+Epoch 11/25
+13/13 [==============================] - 59s 5s/step - loss: 0.5150 - accuracy: 0.8069 - val_loss: 0.3818 - val_accuracy: 0.8804
+Epoch 12/25
+13/13 [==============================] - 92s 7s/step - loss: 0.4805 - accuracy: 0.8029 - val_loss: 0.3960 - val_accuracy: 0.8436
+Epoch 13/25
+13/13 [==============================] - 89s 7s/step - loss: 0.4145 - accuracy: 0.8473 - val_loss: 0.3819 - val_accuracy: 0.8558
+Epoch 14/25
+13/13 [==============================] - 61s 5s/step - loss: 0.3581 - accuracy: 0.8691 - val_loss: 0.2216 - val_accuracy: 0.9294
+Epoch 15/25
+13/13 [==============================] - 58s 4s/step - loss: 0.3624 - accuracy: 0.8578 - val_loss: 0.4041 - val_accuracy: 0.8405
+Epoch 16/25
+13/13 [==============================] - 78s 6s/step - loss: 0.3464 - accuracy: 0.8683 - val_loss: 0.2000 - val_accuracy: 0.9387
+Epoch 17/25
+13/13 [==============================] - 96s 7s/step - loss: 0.3211 - accuracy: 0.8821 - val_loss: 0.3073 - val_accuracy: 0.8834
+Epoch 18/25
+13/13 [==============================] - 98s 8s/step - loss: 0.3048 - accuracy: 0.8796 - val_loss: 0.2325 - val_accuracy: 0.9110
+Epoch 19/25
+13/13 [==============================] - 75s 6s/step - loss: 0.2640 - accuracy: 0.9111 - val_loss: 0.4452 - val_accuracy: 0.8190
+Epoch 20/25
+13/13 [==============================] - 65s 5s/step - loss: 0.2253 - accuracy: 0.9265 - val_loss: 0.1335 - val_accuracy: 0.9325
+Epoch 21/25
+13/13 [==============================] - 54s 4s/step - loss: 0.2513 - accuracy: 0.9039 - val_loss: 0.1600 - val_accuracy: 0.9540
+Epoch 22/25
+13/13 [==============================] - 51s 4s/step - loss: 0.2390 - accuracy: 0.9168 - val_loss: 0.1651 - val_accuracy: 0.9509
+Epoch 23/25
+13/13 [==============================] - 56s 4s/step - loss: 0.1962 - accuracy: 0.9386 - val_loss: 0.1442 - val_accuracy: 0.9448
+Epoch 24/25
+13/13 [==============================] - 60s 5s/step - loss: 0.1440 - accuracy: 0.9588 - val_loss: 0.1158 - val_accuracy: 0.9601
+Epoch 25/25
+13/13 [==============================] - 59s 5s/step - loss: 0.1341 - accuracy: 0.9572 - val_loss: 0.0638 - val_accuracy: 0.9847
+</code></pre>
+</div>
+<div class="output execute_result" data-execution_count="29">
+<pre><code>&lt;keras.callbacks.History at 0x275325375b0&gt;</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="58">
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save model</span></span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="30">
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>model.save(<span class="st">&#39;Animal.h5&#39;</span>)</span></code></pre></div>
+</div>
+<section id="3testing-model" class="cell markdown">
+<h1>3.Testing model</h1>
+</section>
+<div class="cell code" data-execution_count="31">
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.preprocessing <span class="im">import</span> image</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="41">
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>img <span class="op">=</span> image.load_img(<span class="st">&#39;./Animal_Dataset/dataset/Testing//elephants/mala_mala_200064__340.jpg&#39;</span>,target_size<span class="op">=</span>(<span class="dv">600</span>,<span class="dv">600</span>))</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="42">
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>img</span></code></pre></div>
+<div class="output execute_result" data-execution_count="42">
+<p><img src="bad3da0085b8c7be60763b4680e772dc722e6885.png" /></p>
+</div>
+</div>
+<div class="cell code" data-execution_count="44">
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> image.img_to_array(img)</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="45">
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<div class="output execute_result" data-execution_count="45">
+<pre><code>array([[[253., 253., 253.],
+        [255., 255., 253.],
+        [254., 254., 252.],
+        ...,
+        [255., 255., 255.],
+        [255., 255., 255.],
+        [254., 254., 255.]],
+
+       [[253., 253., 253.],
+        [255., 255., 253.],
+        [254., 254., 252.],
+        ...,
+        [255., 255., 255.],
+        [255., 255., 255.],
+        [254., 254., 255.]],
+
+       [[254., 255., 255.],
+        [245., 247., 244.],
+        [254., 255., 253.],
+        ...,
+        [253., 253., 253.],
+        [255., 255., 255.],
+        [255., 255., 255.]],
+
+       ...,
+
+       [[159., 173., 138.],
+        [170., 184., 151.],
+        [164., 177., 147.],
+        ...,
+        [157., 170., 152.],
+        [127., 138., 121.],
+        [142., 151., 134.]],
+
+       [[149., 163., 128.],
+        [149., 163., 128.],
+        [134., 148., 115.],
+        ...,
+        [143., 156., 136.],
+        [136., 148., 128.],
+        [142., 151., 132.]],
+
+       [[149., 163., 128.],
+        [149., 163., 128.],
+        [134., 148., 115.],
+        ...,
+        [143., 156., 136.],
+        [136., 148., 128.],
+        [142., 151., 132.]]], dtype=float32)</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="46">
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>img <span class="op">=</span> np.expand_dims(x,axis<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="47">
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>img</span></code></pre></div>
+<div class="output execute_result" data-execution_count="47">
+<pre><code>array([[[[253., 253., 253.],
+         [255., 255., 253.],
+         [254., 254., 252.],
+         ...,
+         [255., 255., 255.],
+         [255., 255., 255.],
+         [254., 254., 255.]],
+
+        [[253., 253., 253.],
+         [255., 255., 253.],
+         [254., 254., 252.],
+         ...,
+         [255., 255., 255.],
+         [255., 255., 255.],
+         [254., 254., 255.]],
+
+        [[254., 255., 255.],
+         [245., 247., 244.],
+         [254., 255., 253.],
+         ...,
+         [253., 253., 253.],
+         [255., 255., 255.],
+         [255., 255., 255.]],
+
+        ...,
+
+        [[159., 173., 138.],
+         [170., 184., 151.],
+         [164., 177., 147.],
+         ...,
+         [157., 170., 152.],
+         [127., 138., 121.],
+         [142., 151., 134.]],
+
+        [[149., 163., 128.],
+         [149., 163., 128.],
+         [134., 148., 115.],
+         ...,
+         [143., 156., 136.],
+         [136., 148., 128.],
+         [142., 151., 132.]],
+
+        [[149., 163., 128.],
+         [149., 163., 128.],
+         [134., 148., 115.],
+         ...,
+         [143., 156., 136.],
+         [136., 148., 128.],
+         [142., 151., 132.]]]], dtype=float32)</code></pre>
+</div>
+</div>
+</body>
+</html>
